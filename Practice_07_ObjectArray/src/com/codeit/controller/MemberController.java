@@ -20,8 +20,13 @@ public class MemberController {
         return false;
     }
 
-    public void insertMember(String id, String name, String password, String email, String gender, int age) {
-
+    public void insertMember(String id, String name, String password, String email, char gender, int age) {
+        for (int i = 0; i < MAX_SIZE; i++) {
+            if(mArray[i] == null) {
+                mArray[i] = new Member(id, name, password, email, gender, age);
+                size++;
+            }
+        }
     }
 
     public Member searchId(String id) {
