@@ -5,7 +5,7 @@ import com.codeit.model.Member;
 public class MemberController {
     Member[] mArray = new Member[MAX_SIZE];
     public static int MAX_SIZE = 10;
-    int size; //추후 접근제어자 설정
+    public static int size; //추후 접근제어자 설정
 
     public int existMemberNum() {
         return size;
