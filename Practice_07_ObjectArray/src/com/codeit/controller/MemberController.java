@@ -12,7 +12,12 @@ public class MemberController {
     }
 
     public Boolean checkId(String inputId) {
-
+        for (Member member : mArray) {
+            if(member.getId().endsWith(inputId)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void insertMember(String id, String name, String password, String email, String gender, int age) {
