@@ -13,7 +13,7 @@ public class MemberController {
 
     public Boolean checkId(String inputId) {
         for (Member member : mArray) {
-            if(member.getId().endsWith(inputId)) {
+            if (member.getId().endsWith(inputId)) {
                 return true;
             }
         }
@@ -22,7 +22,7 @@ public class MemberController {
 
     public void insertMember(String id, String name, String password, String email, char gender, int age) {
         for (int i = 0; i < MAX_SIZE; i++) {
-            if(mArray[i] == null) {
+            if (mArray[i] == null) {
                 mArray[i] = new Member(id, name, password, email, gender, age);
                 size++;
             }
@@ -31,7 +31,7 @@ public class MemberController {
 
     public Member searchId(String id) {
         for (Member member : mArray) {
-            if(member.getId().equals(id)) {
+            if (member.getId().equals(id)) {
                 return member;
             }
         }
@@ -40,7 +40,7 @@ public class MemberController {
 
     public Member[] searchName(String name) {
         for (Member member : mArray) {
-            if(member.getName().equals(name)) {
+            if (member.getName().equals(name)) {
                 return mArray;
             }
         }
@@ -49,7 +49,7 @@ public class MemberController {
 
     public Member[] searchEmail(String email) {
         for (Member member : mArray) {
-            if(member.getEmail().equals(email)) {
+            if (member.getEmail().equals(email)) {
                 return mArray;
             }
         }
@@ -57,15 +57,33 @@ public class MemberController {
     }
 
     public Boolean updatePassword(String id, String password) {
-
+        for (Member member : mArray) {
+            if (member.getId().equals(id)) {
+                member.setPassword(password);
+                return true;
+            }
+        }
+        return false;
     }
 
     public Boolean updateName(String id, String name) {
-
+        for (Member member : mArray) {
+            if (member.getId().equals(id)) {
+                member.setName(name);
+                return true;
+            }
+        }
+        return false;
     }
 
     public Boolean updateEmail(String id, String email) {
-
+        for (Member member : mArray) {
+            if (member.getId().equals(id)) {
+                member.setEmail(email);
+                return true;
+            }
+        }
+        return false;
     }
 
     public Boolean delete(String id) {
