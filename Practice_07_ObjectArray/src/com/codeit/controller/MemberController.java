@@ -8,7 +8,7 @@ public class MemberController {
     int size; //추후 접근제어자 설정
 
     public int existMemberNum() {
-
+        return size;
     }
 
     public Boolean checkId(String inputId) {
