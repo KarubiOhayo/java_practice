@@ -30,7 +30,12 @@ public class MemberController {
     }
 
     public Member searchId(String id) {
-
+        for (Member member : mArray) {
+            if(member.getId().equals(id)) {
+                return member;
+            }
+        }
+        return null;
     }
 
     public Member[] searchName(String name) {
