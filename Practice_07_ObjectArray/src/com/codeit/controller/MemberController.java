@@ -57,33 +57,27 @@ public class MemberController {
     }
 
     public Boolean updatePassword(String id, String password) {
-        for (Member member : mArray) {
-            if (member.getId().equals(id)) {
-                member.setPassword(password);
-                return true;
-            }
+        if(searchId(id) == null){
+            return false;
         }
-        return false;
+        searchId(id).setPassword(password);
+        return true;
     }
 
     public Boolean updateName(String id, String name) {
-        for (Member member : mArray) {
-            if (member.getId().equals(id)) {
-                member.setName(name);
-                return true;
-            }
+        if(searchId(id) == null){
+            return false;
         }
-        return false;
+        searchId(id).setName(name);
+        return true;
     }
 
     public Boolean updateEmail(String id, String email) {
-        for (Member member : mArray) {
-            if (member.getId().equals(id)) {
-                member.setEmail(email);
-                return true;
-            }
+        if(searchId(id) == null){
+            return false;
         }
-        return false;
+        searchId(id).setEmail(email);
+        return true;
     }
 
     public Boolean delete(String id) {
