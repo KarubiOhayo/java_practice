@@ -39,11 +39,21 @@ public class MemberController {
     }
 
     public Member[] searchName(String name) {
-
+        for (Member member : mArray) {
+            if(member.getName().equals(name)) {
+                return mArray;
+            }
+        }
+        return null;
     }
 
     public Member[] searchEmail(String email) {
-
+        for (Member member : mArray) {
+            if(member.getEmail().equals(email)) {
+                return mArray;
+            }
+        }
+        return null;
     }
 
     public Boolean updatePassword(String id, String password) {
