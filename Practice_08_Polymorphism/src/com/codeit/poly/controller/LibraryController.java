@@ -2,11 +2,11 @@ package com.codeit.poly.controller;
 
 import com.codeit.poly.model.AniBook;
 import com.codeit.poly.model.CookBook;
+import com.codeit.poly.model.Member;
 import com.multi.poly.model.vo.Book;
 
 public class LibraryController {
     // 필드
-    Member member = null;
     Book[] bList = new Book[5];
     {
         bList[0] = new CookBook("백종원의 집밥", "백종원", "tvN", true);
