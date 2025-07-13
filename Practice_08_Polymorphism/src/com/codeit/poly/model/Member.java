@@ -9,20 +9,52 @@ public class Member {
     public Member() {
     }
 
-    public Member(String name, int age, char gender) {
+    public Member(String name, int age, char gender, int couponCount) {
         this.name = name;
         this.age = age;
         this.gender = gender;
+        this.couponCount = couponCount;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public int getCouponCount() {
+        return couponCount;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public void setCouponCount(int couponCount) {
+        this.couponCount = couponCount;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Member{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", age=").append(age);
-        sb.append(", gender=").append(gender);
-        sb.append(", couponCount=").append(couponCount);
-        sb.append('}');
-        return sb.toString();
+        return "Member{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", couponCount=" + couponCount +
+                '}';
     }
 }
